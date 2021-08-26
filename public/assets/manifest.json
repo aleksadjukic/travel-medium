@@ -1,4 +1,7 @@
 {
   "assets/app.css": "http://localhost:8080/assets/app.css",
-  "assets/app.js": "http://localhost:8080/assets/app.js"
+  "assets/app.js": "http://localhost:8080/assets/app.js",
+  "assets/images/mountain.jpg": "http://localhost:8080/assets/images/mountain.dc40ffa7.jpg",
+  "assets/images/Group 195.svg": "http://localhost:8080/assets/images/Group 195.793e8ada.svg",
+  "assets/images/undraw_adventure_4hum.svg": "http://localhost:8080/assets/images/undraw_adventure_4hum.f14974f3.svg"
 }
