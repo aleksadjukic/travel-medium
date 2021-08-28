@@ -10,9 +10,20 @@
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body x-data="globalData">
   @include('partials/core/navbar')
   @!section('body')
+
+  @if(flashMessages.has('success'))
+  <p class="absolute top-2 right-2 z-50 px-4 py-4 rounded-xl bg-green-500 text-white font-semibold"
+    x-transition.duration.800ms>{{
+    flashMessages.get('success') }}</p>
+  @endif
+  @if(flashMessages.has('fail'))
+  <p class="absolute top-2 right-2 z-50 px-4 py-4 rounded-xl bg-red-500 text-white font-semibold"
+    x-transition.duration.500ms>{{
+    flashMessages.get('fail') }}</p>
+  @endif
 </body>
 
 </html>

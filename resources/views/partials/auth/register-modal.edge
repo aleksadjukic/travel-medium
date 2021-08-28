@@ -26,7 +26,8 @@
     </button>
   </div>
   <div class="mt-8">
-    <form action="/register" method="POST" autoComplete="off">
+    <form @submit="() => showSignup = false" action="{{ route('AuthController.register') }}" method="POST"
+      autoComplete="off">
       <div class="flex flex-col mb-2">
         <div class="flex relative ">
           <span
@@ -35,10 +36,13 @@
               <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
             </svg>
           </span>
-          <input type="text" id="sign-in-email" name="username"
-            class=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-            placeholder="Your username" />
+          <input type="text" id="sign-in-email" name="username" value="{{ flashMessages.get('username') || '' }}" class=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700
+            placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600
+            focus:border-transparent" placeholder="Your username" />
         </div>
+        @if(flashMessages.has('errors.username'))
+        <p>{{ flashMessages.get('errors.username')}} </p>
+        @endif
       </div>
       <div class="flex flex-col mb-2">
         <div class="flex relative ">
@@ -50,10 +54,13 @@
               </path>
             </svg>
           </span>
-          <input type="text" id="sign-in-email" name="email"
+          <input type="text" id="sign-in-email" name="email" value="{{ flashMessages.get('email') || '' }}"
             class=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
             placeholder="Your email" />
         </div>
+        @if(flashMessages.has('errors.email'))
+        <p>{{ flashMessages.get('errors.email')}} </p>
+        @endif
       </div>
       <div class="flex flex-col mb-2">
         <div class="flex relative ">
@@ -69,6 +76,9 @@
             class=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
             placeholder="Your password" />
         </div>
+        @if(flashMessages.has('errors.password'))
+        <p>{{ flashMessages.get('errors.password')}} </p>
+        @endif
       </div>
       <div class="flex flex-col mb-6">
         <div class="flex relative ">

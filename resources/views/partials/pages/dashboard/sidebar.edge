@@ -1,0 +1,27 @@
+<div class="relative dark:bg-gray-800">
+  <div class="flex flex-col sm:flex-row sm:justify-around">
+    <div class="w-full h-screen">
+      <nav class="mt-10 px-6">
+        <div class="flex flex-col justify-center items-center">
+          <a href="/dashboard">
+            <h1 class="text-xl"><span>@</span>{{ auth.user.username }}</h1>
+          </a>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-3 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg bg-gray-50 dark:bg-gray-600"
+            href="#">
+            <span class="mx-auto text-lg font-normal">
+              Followers: 238
+            </span>
+          </a>
+          <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-3 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-50 dark:bg-gray-600"
+            href="#">
+            <span class="mx-auto text-lg font-normal">
+              Follows: 108
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
